@@ -31,3 +31,17 @@ if carros:
     print("Possui carros")
 else:
     print("Está vazia")
+
+
+# Multiplas listas
+
+carros_disponiveis = ['argo', 'hb20', 'hilux', 'ferrari', 'porsche', 'cronos']
+
+carros_pedidos = ['argo', 'hb20']
+
+for carros_pedido in carros_pedidos:
+    if carros_pedido in carros_disponiveis:
+        print(f"Adicionando {carros_pedido}")
+    else:
+        print(f"Desculpe, não temos!")
+
