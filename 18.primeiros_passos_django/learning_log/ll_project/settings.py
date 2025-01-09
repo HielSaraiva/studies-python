@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     # Minhas conexões de teste
-    '192.168.229.50', # IPV4 Hiel's MacBook Pro
+    # '192.168.229.50', # IPV4 Hielpy's MacBook Pro
     ]
 
 
