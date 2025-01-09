@@ -111,7 +111,7 @@ python manage.py shell
 ```````
 
 ## Criando páginas
-A criacao de paginas com o Django tem tres etapas: definir URLs, escrever views e escreveer templates.
+A criacao de paginas com o Django tem tres etapas: definir URLs, escrever views e escrever templates.
 
 
 
