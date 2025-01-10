@@ -3,17 +3,20 @@ from django.shortcuts import render, redirect
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
 
+
 # Create your views here.
 
 def index(request):
     """A página inicial para o registro de aprendizagem"""
     return render(request, 'learning_logs/index.html')
 
-def topics(request  ):
+
+def topics(request):
     """"Mostra todos os tópicos"""
     topics = Topic.objects.order_by('date_added')
-    content = {'topics':topics}
+    content = {'topics': topics}
     return render(request, 'learning_logs/topics.html', content)
+
 
 def topic(request, topic_id):
     """"Mostra um único tópico e todas as suas entradas"""
@@ -21,6 +24,7 @@ def topic(request, topic_id):
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic, 'entries': entries}
     return render(request, 'learning_logs/topic.html', context)
+
 
 def new_topic(request):
     """"Adiciona um novo topico"""
@@ -30,14 +34,15 @@ def new_topic(request):
     else:
         # Dados POST enviados; processa os dados
         form = TopicForm(data=request.POST)
-        
+
         if form.is_valid():
             form.save()
             return redirect('learning_logs:topics')
-        
+
     # Exibe um formulário em branco ou inválido
     context = {'form': form}
     return render(request, 'learning_logs/new_topic.html', context)
+
 
 def new_entry(request, topic_id):
     """Adiciona uma entrada nova para um tópico específico"""
@@ -46,7 +51,7 @@ def new_entry(request, topic_id):
     if request.method != 'POST':
         # Nenhum dado enviado; cria um formulário em branco
         form = EntryForm()
-    else: 
+    else:
         # Dados POST enviados; processa os dados
         form = EntryForm(data=request.POST)
         if form.is_valid():
@@ -57,7 +62,8 @@ def new_entry(request, topic_id):
 
     # Exibe um formulário em branco ou inválido
     context = {'topic': topic, 'form': form}
-    return render(request, 'learning_logs/new_entry.html', context)    
+    return render(request, 'learning_logs/new_entry.html', context)
+
 
 def edit_entry(request, entry_id):
     """Edita uma entrada existente"""
