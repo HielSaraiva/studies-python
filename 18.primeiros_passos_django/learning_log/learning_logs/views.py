@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from .models import Topic, Entry
@@ -10,14 +11,14 @@ def index(request):
     """A página inicial para o registro de aprendizagem"""
     return render(request, 'learning_logs/index.html')
 
-
+@login_required
 def topics(request):
     """"Mostra todos os tópicos"""
     topics = Topic.objects.order_by('date_added')
     content = {'topics': topics}
     return render(request, 'learning_logs/topics.html', content)
 
-
+@login_required
 def topic(request, topic_id):
     """"Mostra um único tópico e todas as suas entradas"""
     topic = Topic.objects.get(id=topic_id)
@@ -25,7 +26,7 @@ def topic(request, topic_id):
     context = {'topic': topic, 'entries': entries}
     return render(request, 'learning_logs/topic.html', context)
 
-
+@login_required
 def new_topic(request):
     """"Adiciona um novo topico"""
     if request.method != 'POST':
@@ -43,7 +44,7 @@ def new_topic(request):
     context = {'form': form}
     return render(request, 'learning_logs/new_topic.html', context)
 
-
+@login_required
 def new_entry(request, topic_id):
     """Adiciona uma entrada nova para um tópico específico"""
     topic = Topic.objects.get(id=topic_id)
@@ -64,7 +65,7 @@ def new_entry(request, topic_id):
     context = {'topic': topic, 'form': form}
     return render(request, 'learning_logs/new_entry.html', context)
 
-
+@login_required
 def edit_entry(request, entry_id):
     """Edita uma entrada existente"""
     entry = Entry.objects.get(id=entry_id)
