@@ -136,3 +136,8 @@ python manage.py shell
 
 A criacao de paginas com o Django tem tres etapas: definir URLs, escrever views e escrever templates.
 
+## Recriar a estrutura do banco de dados
+
+````````
+python manage.py flush
+````````
