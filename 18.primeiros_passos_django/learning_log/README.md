@@ -148,6 +148,11 @@ python manage.py flush
 pip freeze > requirements.txt
 ````````
 
+## Baixando dependências do arquivo requirements.txt
+
+````````
+pip install -r requirements.txt
+````````
 ## Protegendo um projeto ativo
  
 Lembre-se de DEBUG = False em settings.py
