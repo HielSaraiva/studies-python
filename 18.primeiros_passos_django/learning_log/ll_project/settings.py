@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'learning_logs',
     'accounts',
 
+    # Aplicacoes de terceiros
+    'django_bootstrap5',
+
     # Aplicacoes defaults do Django
     'django.contrib.admin',
     'django.contrib.auth',
@@ -61,7 +64,7 @@ ROOT_URLCONF = 'll_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

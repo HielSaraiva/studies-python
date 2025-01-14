@@ -141,3 +141,13 @@ A criacao de paginas com o Django tem tres etapas: definir URLs, escrever views 
 ````````
 python manage.py flush
 ````````
+
+## Criando um arquivo requirements.txt
+
+````````
+pip freeze > requirements.txt
+````````
+
+## Protegendo um projeto ativo
+ 
+Lembre-se de DEBUG = False em settings.py
