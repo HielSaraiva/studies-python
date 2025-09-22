@@ -34,7 +34,6 @@ else:
 
 
 # Multiplas listas
-
 carros_disponiveis = ['argo', 'hb20', 'hilux', 'ferrari', 'porsche', 'cronos']
 
 carros_pedidos = ['argo', 'hb20']
@@ -45,3 +44,7 @@ for carros_pedido in carros_pedidos:
     else:
         print(f"Desculpe, não temos!")
 
+# Operador ternário (if else de uma linha)
+condicao = 10 == 11
+variavel = 'Valor' if condicao else 'Outro valor'
+print(variavel)

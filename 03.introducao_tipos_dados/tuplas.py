@@ -1,8 +1,15 @@
 # Introdução às tuplas
 
+# Tupla é um tipo imutável
+tupla1 = (123, True, 'Hiel')
+print(tupla1)
+
 # Criando tupla
 minha_tupla = ('maçã', 'banana', 'cereja')
+minha_tupla = 'maçã', 'banana', 'cereja'
 print(minha_tupla)
+
+print(minha_tupla[1])
 
 # Printando elemento a elemento
 for i in minha_tupla:

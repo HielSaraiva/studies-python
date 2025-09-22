@@ -7,7 +7,7 @@ for pessoa in pessoas:
     print(f"{pessoa.title()}, parabéns! Você teve o seu TCC aprovado!")
 
 # Criando uma lista de numeros
-numeros = list(range(1, 10)) # nao conta o 10
+numeros = list(range(1, 10))  # nao conta o 10
 print(numeros)
 
 numeros_pares = list(range(2, 20, 2))
@@ -18,7 +18,8 @@ for numero in range(1, 15):
     numeros_quadrados.append(numero ** 2)
 print(numeros_quadrados)
 
-numeros_quadrados = [numero ** 2 for numero in range(1, 15)] # List comprehensions
+# List comprehensions
+numeros_quadrados = [numero ** 2 for numero in range(1, 15)]
 print(numeros_quadrados)
 
 # Estatistica simples
@@ -27,7 +28,7 @@ print(max(numeros))
 print(sum(numeros))
 
 # Fatias de listas
-print(pessoas[1:2]) 
+print(pessoas[1:2])
 print(pessoas[-3:])
 
 # Copia de uma lista
@@ -40,3 +41,15 @@ print(dimensoes_retangulo)
 
 dimensoes_retangulo = (250, 120)
 print(dimensoes_retangulo)
+
+
+# Isinstance - checar tipo
+lista = ['a', 1, 1.1, True, [0, 1], {'nome': 'Luiz'}, (1, 2)]
+
+for item in lista:
+    if isinstance(item, set):
+        item.add(5)
+        print(item, isinstance(item, set))
+
+    if isinstance(item, (int, float)):
+        print('NUM')
