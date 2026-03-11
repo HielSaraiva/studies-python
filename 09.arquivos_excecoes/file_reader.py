@@ -1,9 +1,9 @@
 # Lendo de arquivos
 from pathlib import Path
 
-path = Path('10.arquivos_excecoes\\pi_digits.txt')
+path = Path('pi_digits.txt')
 contents = path.read_text()
-contents = contents.rstrip() # remove a linha em branco ao final do arquivo
+contents = contents.rstrip()  # remove a linha em branco ao final do arquivo
 # contents = path.read_text().rstrip() # outra forma
 print(contents[:50])
 
@@ -27,3 +27,5 @@ if birthday in pi_string:
 else:
     print('Your birthday does not appears in the first million digits of pi!')
 
+with open('pi_digits.txt', 'r') as arquivo:
+    print(arquivo.read())

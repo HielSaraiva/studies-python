@@ -48,3 +48,19 @@ for carros_pedido in carros_pedidos:
 condicao = 10 == 11
 variavel = 'Valor' if condicao else 'Outro valor'
 print(variavel)
+
+
+# Guard Clause - Evitando uso repetitivo de if
+def calcular_desconto(preco, cliente_vip):
+    # Guard clauses
+    if preco <= 0:
+        return "Preço inválido"
+
+    if not cliente_vip:
+        return preco
+
+    # Código principal (só chega aqui se passou nas validações)
+    return preco * 0.9
+
+
+print(calcular_desconto(124, True))

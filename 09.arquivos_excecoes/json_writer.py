@@ -1,9 +1,13 @@
-# Armazenando dados em JSON
-from pathlib import Path
 import json
 
-numbers = [2, 3, 5, 7, 11, 13]
+pessoa = {
+    'nome': 'Hiel',
+    'sobrenome': 'Saraiva',
+    'enderecos': [
+        {'rua': 'Rio Negro', 'numero': 290}
+    ],
+    'dev': True
+}
 
-path = Path('10.arquivos_excecoes\\numbers.json')
-contents = json.dumps(numbers)
-path.write_text(contents)
+with open('test.json', 'w') as arquivo:
+    json.dump(pessoa, arquivo, indent=3)

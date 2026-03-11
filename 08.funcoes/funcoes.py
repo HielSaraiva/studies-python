@@ -266,3 +266,24 @@ def recursiva(inicio=0, fim=10):
 
 
 print(recursiva())
+
+
+# Problema dos parâmetros mutáveis
+def adicionar_clientes(nome, lista=[]):
+    lista.append(nome)
+    return lista
+
+
+client1 = adicionar_clientes('Hiel')
+print(client1)
+
+client2 = adicionar_clientes('Geni')
+print(client2)
+
+
+# Positional Only-Parameters (tudo antes da '/' dever ser apenas posicional)
+def soma(a, b, /, x, y):
+    print(a + b + x + y)
+
+
+soma(1, 2, y=2, x=1)
