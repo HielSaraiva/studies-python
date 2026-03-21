@@ -44,3 +44,19 @@ def divide(n, d):
         return n/d
     except ZeroDivisionError:
         raise  # relançar o erro
+
+
+# Criando Exceções em Python
+class MeuError(Exception):
+    ...
+
+
+# Levantando e tratando Exceções
+def levantar():
+    raise MeuError("A mensagem do meu erro")
+
+
+try:
+    levantar()
+except MeuError as error:
+    print(error)
